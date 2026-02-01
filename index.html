@@ -1,93 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Valentine</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
-      background: #fff0f5;
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(180deg, #fff0f5, #ffe4ec);
       font-family: 'Poppins', sans-serif;
+      color: #3b1020;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .screen {
+      width: 100%;
+      height: 100%;
+      padding: 40px 24px;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      padding: 60px 20px;
-      color: #4a1c2f;
+    }
+    .screen.active {
+      display: flex;
     }
     h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 32px;
+      font-size: 10vw;
+      line-height: 1.1;
       margin-bottom: 20px;
     }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 8.5vw;
+      line-height: 1.2;
+      margin-bottom: 30px;
+    }
+    p {
+      font-size: 4.2vw;
+      line-height: 1.7;
+      max-width: 700px;
+    }
     button {
-      margin-top: 30px;
-      padding: 12px 26px;
+      margin-top: 40px;
+      padding: 14px 34px;
       font-size: 16px;
+      border-radius: 40px;
       border: none;
-      border-radius: 30px;
-      background-color: #e6396f;
+      background: #e6396f;
       color: white;
       cursor: pointer;
     }
     .option {
-      display: block;
-      margin: 12px auto;
-      padding: 12px 20px;
-      width: 240px;
-      border-radius: 25px;
-      background-color: #ff4d79;
-      color: white;
-      border: none;
+      width: 80%;
+      max-width: 320px;
+      margin: 10px 0;
+      padding: 14px;
+      border-radius: 30px;
       font-size: 15px;
+      border: none;
+      background: #ff4d79;
+      color: white;
     }
-    .hidden {
-      display: none;
-    }
-    .text {
-      max-width: 520px;
-      margin: auto;
-      font-size: 16px;
-      line-height: 1.7;
+    .letter {
+      text-align: left;
+      font-size: 4vw;
     }
   </style>
 </head>
 <body>
 
 <!-- Screen 1 -->
-<div id="screen1">
+<div class="screen active" id="screen1">
   <h1>Hey Armaan,</h1>
-  <p class="text">How are you doing today?</p>
-  <button onclick="goToScreen2()">Next</button>
+  <p>How are you doing today?</p>
+  <button onclick="nextScreen(2)">Next</button>
 </div>
 
 <!-- Screen 2 -->
-<div id="screen2" class="hidden">
-  <h1>Will you be Bhoomika’s Valentine? 💌</h1>
-  <button class="option" onclick="showMessage()">a. Yes</button>
-  <button class="option" onclick="showMessage()">b. Option a</button>
-  <button class="option" onclick="showMessage()">c. Both a and b</button>
+<div class="screen" id="screen2">
+  <h2>Will you be<br>Bhoomika’s Valentine?</h2>
+  <button class="option" onclick="nextScreen(3)">a. Yes</button>
+  <button class="option" onclick="nextScreen(3)">b. Option a</button>
+  <button class="option" onclick="nextScreen(3)">c. Both a and b</button>
 </div>
 
 <!-- Screen 3 -->
-<div id="screen3" class="hidden">
-  <h1>For You, Armaan 🤍</h1>
-  <p class="text">
-    I miss you more than I can ever put into words.  
-    Some days feel longer just because you’re not around, and some nights feel quieter because I can’t hear your voice.
-    <br><br>
-    No matter how busy life gets or how far we are, you’re always on my mind.  
-    I miss our conversations, your presence, and the comfort of knowing you’re there.
-    <br><br>
-    This isn’t just a Valentine question — it’s my way of telling you that you matter to me, deeply and always.
+<div class="screen" id="screen3">
+  <h1>Armaan 🤍</h1>
+  <p class="letter">
+    I miss you — in quiet moments, in loud days, and in between everything else.<br><br>
+    I miss talking to you, hearing your voice, and the comfort that comes just from knowing you’re there.<br><br>
+    Distance changes many things, but it never changes what you mean to me.
+    This isn’t just a Valentine question — it’s my way of choosing you, again and again.
   </p>
 </div>
 
 <script>
-  function goToScreen2() {
-    document.getElementById("screen1").classList.add("hidden");
-    document.getElementById("screen2").classList.remove("hidden");
-  }
-  function showMessage() {
-    document.getElementById("screen2").classList.add("hidden");
-    document.getElementById("screen3").classList.remove("hidden");
+  function nextScreen(n) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById('screen' + n).classList.add('active');
   }
 </script>
 
