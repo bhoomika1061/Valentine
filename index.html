@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #ffe6ec;
+      text-align: center;
+      padding-top: 80px;
+    }
+    h1 { color: #d6336c; }
+    button {
+      margin: 10px;
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #ff4d6d;
+      color: white;
+    }
+    #message {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #6a1b4d;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Will you be my Valentine? 💖</h1>
+
+<button onclick="showMessage()">a. Yes</button>
+<button onclick="showMessage()">b. Option a</button>
+<button onclick="showMessage()">c. Both a and b</button>
+
+<div id="message">
+  <p>Good choice 😉</p>
+  <p>You’re officially my Valentine now.</p>
+  <p>No escape. Just us 💕</p>
+</div>
+
+<script>
+  function showMessage() {
+    document.getElementById("message").style.display = "block";
+  }
+</script>
+
+</body>
+</html>
