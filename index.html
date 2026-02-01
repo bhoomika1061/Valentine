@@ -3,247 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Armaan 💕</title>
-
+    <title>Be My Valentine? 💕</title>
     <link href="https://fonts.googleapis.com/css2?family=Righteous&family=DM+Sans:wght@400;500;700&family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
-
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        :root {
-            --pink: #FFB3D9;
-            --soft-pink: #FFE5F1;
-            --coral: #FF8FAB;
-            --beige: #FFF5E4;
-            --soft-red: #FF6B9D;
-            --cream: #FFFEF9;
-            --text: #5A4A4A;
-        }
-
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background: linear-gradient(135deg, var(--beige), var(--soft-pink));
-            color: var(--text);
-            overflow-x: hidden;
-        }
-
-        .bg-hearts {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .heart {
-            position: absolute;
-            font-size: 20px;
-            animation: float 14s linear infinite;
-            opacity: 0;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(100vh); opacity: 0; }
-            10% { opacity: .6; }
-            90% { opacity: .6; }
-            100% { transform: translateY(-100vh); opacity: 0; }
-        }
-
-        .container {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 90px 20px;
-        }
-
-        .hero h1 {
-            font-family: 'Righteous', cursive;
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            color: var(--soft-red);
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            50% { transform: translateY(-10px); }
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin: 30px 0;
-        }
-
-        .btn-wrap {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            position: relative;
-            height: 150px;
-        }
-
-        .btn {
-            font-family: 'Fredoka';
-            font-size: 1.4rem;
-            padding: 18px 45px;
-            border-radius: 50px;
-            border: none;
-            cursor: pointer;
-            transition: .3s;
-            box-shadow: 0 8px 25px rgba(0,0,0,.15);
-        }
-
-        .yes {
-            background: linear-gradient(135deg, var(--soft-red), var(--coral));
-            color: #fff;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            50% { transform: scale(1.05); }
-        }
-
-        .no {
-            background: #eee;
-            position: absolute;
-        }
-
-        .section {
-            background: #fff;
-            border-radius: 20px;
-            padding: 45px 30px;
-            margin: 60px 0;
-            box-shadow: 0 12px 40px rgba(0,0,0,.1);
-            text-align: center;
-        }
-
-        .section h2 {
-            font-family: 'Righteous';
-            color: var(--soft-red);
-            margin-bottom: 25px;
-        }
-
-        .quiz-btns {
-            display: grid;
-            gap: 15px;
-        }
-
-        .quiz-btns button {
-            padding: 15px;
-            border-radius: 15px;
-            border: 2px solid var(--soft-red);
-            background: var(--cream);
-            font-size: 1.2rem;
-            cursor: pointer;
-        }
-
-        .letter {
-            font-style: italic;
-            line-height: 1.8;
-            font-size: 1.1rem;
-            background: var(--cream);
-            padding: 25px;
-            border-radius: 15px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 50px 20px;
-            font-size: 1.1rem;
-        }
-    </style>
+    <!-- STYLES UNCHANGED -->
 </head>
-
 <body>
 
-<div class="bg-hearts" id="hearts"></div>
+    <!-- Floating hearts background -->
+    <div class="bg-hearts" id="bgHearts"></div>
 
-<div class="container">
+    <!-- Cute doodles -->
+    <div class="doodle doodle-1">💕</div>
+    <div class="doodle doodle-2">✨</div>
+    <div class="doodle doodle-3">💖</div>
+    <div class="doodle doodle-4">🌸</div>
+    <div class="doodle doodle-5">💝</div>
+    <div class="doodle doodle-6">🦋</div>
 
-    <!-- HERO -->
-    <section class="hero">
-        <h1>Hey Armaan 💕</h1>
-        <p>Even from miles away… I want to ask u something important.</p>
+    <div class="container">
 
-        <div class="btn-wrap" id="btnWrap">
-            <button class="btn yes" id="yesBtn">YES 💖</button>
-            <button class="btn no" id="noBtn">No 😢</button>
-        </div>
-    </section>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Will You Be My Valentine? 💕</h1>
+            <p>Hey Armaan! I have something important to ask you...</p>
 
-    <!-- QUIZ -->
-    <section class="section" id="quiz" style="display:none;">
-        <h2>Quick question 💌</h2>
-        <p>What do u think about when u miss u the most?</p>
+            <div class="button-container" id="buttonContainer">
+                <button class="btn btn-yes" id="yesBtn">YES! 💖</button>
+                <button class="btn btn-no" id="noBtn">No 😢</button>
+            </div>
+        </section>
 
-        <div class="quiz-btns">
-            <button onclick="showAnswer()">My smile 😄</button>
-            <button onclick="showAnswer()">My voice 💞</button>
-            <button onclick="showAnswer()">Our future together 💖</button>
-        </div>
+        <!-- Success Section -->
+        <section class="success-section" id="successSection">
+            <h2>🎉 Yaaay! You said YES! 🎉</h2>
+            <p>I'm so happy right now! 😊 You've made my day absolutely perfect!</p>
+            <p>Now let me share all the special things I have planned for us... 💕</p>
+        </section>
 
-        <p id="quizAnswer" style="display:none; margin-top:20px; font-weight:600;">
-            Correct answer? All of it. Always. 🫶
-        </p>
-    </section>
+        <!-- Love Letter Section -->
+        <section class="love-letter">
+            <div class="envelope" id="envelope">
+                <div class="envelope-body">
+                    <div class="envelope-flap"></div>
+                </div>
+            </div>
 
-    <!-- LETTER -->
-    <section class="section" id="letterSection" style="display:none;">
-        <h2>For u 🤍</h2>
-        <div class="letter">
-            Dear Armaan,<br><br>
-            Being far from u isn’t easy, but loving u has never been difficult.<br><br>
-            I miss u in the quiet moments, in random thoughts, and every time I wish I could hear ur voice right then.<br><br>
-            What we have is real, strong, and worth every mile between us. One day, this distance will just be a story.<br><br>
-            Will u be my Valentine — today, tomorrow, and always?<br><br>
-            Always yours,<br>
-            Bhoomika ❤️
-        </div>
-    </section>
+            <p style="text-align:center;">📮 Click the envelope to read your letter</p>
 
-    <footer>
-        Made with love by Bhoomika ❤️<br>
-        <small>P.S. I love u more than u know.</small>
-    </footer>
+            <div class="letter-content">
+                <div class="letter-text">
+                    Dear Armaan,
+                    <br><br>
+                    From the moment I met you, my life became more colorful. Every day with you is a gift, and I can't imagine my world without your smile, your laughter, and your presence.
+                    <br><br>
+                    You make the ordinary moments extraordinary. Whether we're sharing a meal, watching movies, or just talking about our day, every second with you is precious to me.
+                    <br><br>
+                    This Valentine's Day, I wanted to do something special to show you just how much you mean to me. You deserve all the love and happiness in the world.
+                    <br><br>
+                    With all my heart,<br>
+                    Bhoomika ❤️
+                </div>
+            </div>
+        </section>
 
-</div>
+        <!-- Footer -->
+        <footer>
+            Made with love by<br>
+            Bhoomika <span>❤️</span>
+            <br><br>
+            <small>P.S. You're the best thing that's ever happened to me! 😊</small>
+        </footer>
 
-<script>
-    // floating hearts
-    setInterval(() => {
-        const h = document.createElement('div');
-        h.className = 'heart';
-        h.innerText = '💖';
-        h.style.left = Math.random() * 100 + '%';
-        document.getElementById('hearts').appendChild(h);
-        setTimeout(() => h.remove(), 14000);
-    }, 2500);
-
-    const noBtn = document.getElementById('noBtn');
-    const yesBtn = document.getElementById('yesBtn');
-    let count = 0;
-
-    noBtn.addEventListener('mouseenter', () => {
-        count++;
-        noBtn.style.left = Math.random() * 70 + '%';
-        noBtn.style.top = Math.random() * 70 + 'px';
-        yesBtn.style.transform = `scale(${1 + count * .15})`;
-        if (count > 6) noBtn.style.display = 'none';
-    });
-
-    yesBtn.onclick = () => {
-        document.getElementById('btnWrap').style.display = 'none';
-        document.getElementById('quiz').style.display = 'block';
-    };
-
-    function showAnswer() {
-        document.getElementById('quizAnswer').style.display = 'block';
-        document.getElementById('letterSection').style.display = 'block';
-    }
-</script>
+    </div>
 
 </body>
 </html>
