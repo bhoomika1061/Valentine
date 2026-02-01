@@ -2,49 +2,92 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Valentine?</title>
+  <title>Valentine</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #ffe6ec;
+      background: #fff0f5;
+      font-family: 'Poppins', sans-serif;
       text-align: center;
-      padding-top: 80px;
+      padding: 60px 20px;
+      color: #4a1c2f;
     }
-    h1 { color: #d6336c; }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
     button {
-      margin: 10px;
-      padding: 12px 20px;
+      margin-top: 30px;
+      padding: 12px 26px;
       font-size: 16px;
       border: none;
-      border-radius: 8px;
-      background-color: #ff4d6d;
+      border-radius: 30px;
+      background-color: #e6396f;
       color: white;
+      cursor: pointer;
     }
-    #message {
-      margin-top: 30px;
-      font-size: 18px;
-      color: #6a1b4d;
+    .option {
+      display: block;
+      margin: 12px auto;
+      padding: 12px 20px;
+      width: 240px;
+      border-radius: 25px;
+      background-color: #ff4d79;
+      color: white;
+      border: none;
+      font-size: 15px;
+    }
+    .hidden {
       display: none;
+    }
+    .text {
+      max-width: 520px;
+      margin: auto;
+      font-size: 16px;
+      line-height: 1.7;
     }
   </style>
 </head>
 <body>
 
-<h1>Will you be my Valentine? 💖</h1>
+<!-- Screen 1 -->
+<div id="screen1">
+  <h1>Hey Armaan,</h1>
+  <p class="text">How are you doing today?</p>
+  <button onclick="goToScreen2()">Next</button>
+</div>
 
-<button onclick="showMessage()">a. Yes</button>
-<button onclick="showMessage()">b. Option a</button>
-<button onclick="showMessage()">c. Both a and b</button>
+<!-- Screen 2 -->
+<div id="screen2" class="hidden">
+  <h1>Will you be Bhoomika’s Valentine? 💌</h1>
+  <button class="option" onclick="showMessage()">a. Yes</button>
+  <button class="option" onclick="showMessage()">b. Option a</button>
+  <button class="option" onclick="showMessage()">c. Both a and b</button>
+</div>
 
-<div id="message">
-  <p>Good choice 😉</p>
-  <p>You’re officially my Valentine now.</p>
-  <p>No escape. Just us 💕</p>
+<!-- Screen 3 -->
+<div id="screen3" class="hidden">
+  <h1>For You, Armaan 🤍</h1>
+  <p class="text">
+    I miss you more than I can ever put into words.  
+    Some days feel longer just because you’re not around, and some nights feel quieter because I can’t hear your voice.
+    <br><br>
+    No matter how busy life gets or how far we are, you’re always on my mind.  
+    I miss our conversations, your presence, and the comfort of knowing you’re there.
+    <br><br>
+    This isn’t just a Valentine question — it’s my way of telling you that you matter to me, deeply and always.
+  </p>
 </div>
 
 <script>
+  function goToScreen2() {
+    document.getElementById("screen1").classList.add("hidden");
+    document.getElementById("screen2").classList.remove("hidden");
+  }
   function showMessage() {
-    document.getElementById("message").style.display = "block";
+    document.getElementById("screen2").classList.add("hidden");
+    document.getElementById("screen3").classList.remove("hidden");
   }
 </script>
 
