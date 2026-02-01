@@ -2,83 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Be My Valentine? 💕</title>
-    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=DM+Sans:wght@400;500;700&family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        /* ⚠️ CSS UNCHANGED */
-        /* (same as your original code) */
-    </style>
+    <title>Our Special Quiz</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Floating hearts background -->
-    <div class="bg-hearts" id="bgHearts"></div>
-
-    <!-- Cute doodles -->
-    <div class="doodle doodle-1">💕</div>
-    <div class="doodle doodle-2">✨</div>
-    <div class="doodle doodle-3">💖</div>
-    <div class="doodle doodle-4">🌸</div>
-    <div class="doodle doodle-5">💝</div>
-    <div class="doodle doodle-6">🦋</div>
-
     <div class="container">
-        <!-- Hero Section -->
-        <section class="hero">
-            <h1>Will You Be My Valentine? 💕</h1>
-            <p>Hey Armaan! I have something important to ask you...</p>
-
-            <div class="button-container" id="buttonContainer">
-                <button class="btn btn-yes" id="yesBtn">YES! 💖</button>
-                <button class="btn btn-no" id="noBtn">No 😢</button>
-            </div>
-        </section>
-
-        <!-- Success Section -->
-        <section class="success-section" id="successSection">
-            <h2>🎉 Yaaay! You said YES! 🎉</h2>
-            <p>I'm so happy right now! 😊 You've made my day absolutely perfect!</p>
-            <p>Now let me share all the special things I have planned for us... 💕</p>
-        </section>
-
-        <!-- Love Letter Section -->
-        <section class="love-letter">
-            <div class="envelope" id="envelope">
-                <div class="envelope-body">
-                    <div class="envelope-flap"></div>
+        <div id="quiz-section">
+            <h2 id="questionText">When did I first fall for you?</h2>
+            <div id="options">
                 </div>
-            </div>
-            <p style="text-align: center; font-size: 1.1rem; margin-bottom: 20px;">
-                📮 Click the envelope to read your letter
-            </p>
-            <div class="letter-content">
-                <div class="letter-text">
-                    Dear Armaan,
-                    <br><br>
-                    From the moment I met you, my life became more colorful. Every day with you is a gift, and I can't imagine my world without your smile, your laughter, and your presence.
-                    <br><br>
-                    You make the ordinary moments extraordinary. Whether we're sharing a meal, watching movies, or just talking about our day, every second with you is precious to me.
-                    <br><br>
-                    This Valentine's Day, I wanted to do something special to show you just how much you mean to me. You deserve all the love and happiness in the world.
-                    <br><br>
-                    With all my heart,<br>
-                    Bhoomika ❤️
-                </div>
-            </div>
-        </section>
+            <p>Score: <span id="score">0</span></p>
+        </div>
 
-        <!-- Footer -->
-        <footer>
-            Made with love by<br>
-            Bhoomika <span>❤️</span>
-            <br><br>
-            <small>P.S. You're the best thing that's ever happened to me! 😊</small>
-        </footer>
+        <div id="valentine-section" style="display:none;">
+            <h2>Will you be my Valentine?</h2>
+            <button class="yes-btn" onclick="celebrate()">Yes! ❤️</button>
+            <button class="no-btn" onmouseover="moveButton(this)">No</button>
+        </div>
+
+        <div id="result-message"></div>
     </div>
-
-    <script>
-        /* ⚠️ JS UNCHANGED */
-        /* (same as your original code) */
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
