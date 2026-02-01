@@ -1,183 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Valentine for Armaan</title>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-<style>
-  body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: 'Roboto', sans-serif;
-    overflow: hidden;
-    background: linear-gradient(135deg, #ffdde1, #fad0c4);
-    position: relative;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Armaan 💕</title>
 
-  .page {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    text-align: center;
-    transition: opacity 0.5s;
-  }
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=DM+Sans:wght@400;500;700&family=Fredoka:wght@400;600&display=swap" rel="stylesheet">
 
-  .hidden { display: none; }
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  button {
-    font-size: 1.5rem;
-    padding: 15px 30px;
-    margin: 20px;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    font-family: 'Pacifico', cursive;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    transition: transform 0.2s, background 0.2s;
-  }
+        :root {
+            --pink: #FFB3D9;
+            --soft-pink: #FFE5F1;
+            --coral: #FF8FAB;
+            --beige: #FFF5E4;
+            --soft-red: #FF6B9D;
+            --cream: #FFFEF9;
+            --text: #5A4A4A;
+        }
 
-  button:hover { transform: scale(1.1); }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: linear-gradient(135deg, var(--beige), var(--soft-pink));
+            color: var(--text);
+            overflow-x: hidden;
+        }
 
-  #yes { background-color: #ff6b81; color: white; }
-  #no { background-color: #fff3f3; color: #333; position: relative; }
+        .bg-hearts {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
 
-  h1 { font-family: 'Pacifico', cursive; font-size: 2.5rem; color: #ff6b81; margin-bottom: 30px; }
+        .heart {
+            position: absolute;
+            font-size: 20px;
+            animation: float 14s linear infinite;
+            opacity: 0;
+        }
 
-  #letter {
-    font-size: 1.2rem;
-    max-width: 90%;
-    overflow-y: auto;
-    text-align: left;
-    line-height: 1.5;
-    color: #333;
-  }
+        @keyframes float {
+            0% { transform: translateY(100vh); opacity: 0; }
+            10% { opacity: .6; }
+            90% { opacity: .6; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
 
-  .heart, .prop {
-    position: absolute;
-    font-size: 2rem;
-    animation: float 6s linear infinite;
-  }
+        .container {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
 
-  .prop {
-    font-size: 2.5rem;
-  }
+        .hero {
+            text-align: center;
+            padding: 90px 20px;
+        }
 
-  @keyframes float {
-    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-    50% { transform: translateY(-200px) rotate(180deg); opacity: 0.7; }
-    100% { transform: translateY(-400px) rotate(360deg); opacity: 0; }
-  }
+        .hero h1 {
+            font-family: 'Righteous', cursive;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            color: var(--soft-red);
+            animation: bounce 2s infinite;
+        }
 
-  .quiz-option {
-    font-size: 1.3rem;
-    padding: 10px 20px;
-    margin: 10px;
-    border-radius: 12px;
-    border: 2px solid #ff6b81;
-    cursor: pointer;
-    background-color: #fff3f3;
-    transition: 0.2s;
-  }
-  .quiz-option:hover { background-color: #ff6b81; color: white; }
-</style>
+        @keyframes bounce {
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin: 30px 0;
+        }
+
+        .btn-wrap {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            position: relative;
+            height: 150px;
+        }
+
+        .btn {
+            font-family: 'Fredoka';
+            font-size: 1.4rem;
+            padding: 18px 45px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: .3s;
+            box-shadow: 0 8px 25px rgba(0,0,0,.15);
+        }
+
+        .yes {
+            background: linear-gradient(135deg, var(--soft-red), var(--coral));
+            color: #fff;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            50% { transform: scale(1.05); }
+        }
+
+        .no {
+            background: #eee;
+            position: absolute;
+        }
+
+        .section {
+            background: #fff;
+            border-radius: 20px;
+            padding: 45px 30px;
+            margin: 60px 0;
+            box-shadow: 0 12px 40px rgba(0,0,0,.1);
+            text-align: center;
+        }
+
+        .section h2 {
+            font-family: 'Righteous';
+            color: var(--soft-red);
+            margin-bottom: 25px;
+        }
+
+        .quiz-btns {
+            display: grid;
+            gap: 15px;
+        }
+
+        .quiz-btns button {
+            padding: 15px;
+            border-radius: 15px;
+            border: 2px solid var(--soft-red);
+            background: var(--cream);
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .letter {
+            font-style: italic;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            background: var(--cream);
+            padding: 25px;
+            border-radius: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 50px 20px;
+            font-size: 1.1rem;
+        }
+    </style>
 </head>
+
 <body>
 
-<!-- Floating hearts & props -->
-<div class="heart" style="left:10%;">❤️</div>
-<div class="heart" style="left:30%; animation-delay: 1s;">💖</div>
-<div class="heart" style="left:50%; animation-delay: 2s;">💕</div>
-<div class="prop" style="left:20%; bottom:10%;">🧸</div>
-<div class="prop" style="left:80%; bottom:15%;">💐</div>
-<div class="prop" style="left:60%; bottom:5%;">💋</div>
-<div class="prop" style="left:40%; bottom:20%;">🎈</div>
+<div class="bg-hearts" id="hearts"></div>
 
-<!-- Page 1: Landing -->
-<div id="page1" class="page">
-  <h1>Hello Armaan, there’s something for you…</h1>
-  <button onclick="showPage(2)">Next</button>
-</div>
+<div class="container">
 
-<!-- Page 2: Valentine Question -->
-<div id="page2" class="page hidden">
-  <h1>Will you be my Valentine?</h1>
-  <div>
-    <button id="yes" onclick="showPage(3)">Yes</button>
-    <button id="no">No</button>
-  </div>
-</div>
+    <!-- HERO -->
+    <section class="hero">
+        <h1>Hey Armaan 💕</h1>
+        <p>Even from miles away… I want to ask u something important.</p>
 
-<!-- Page 3: Quiz Question 1 -->
-<div id="page3" class="page hidden">
-  <h1>Quick Quiz! ❤️</h1>
-  <p>Which of these is my favorite memory with you?</p>
-  <div class="quiz-option" onclick="showPage(4)">Movie night 🍿</div>
-  <div class="quiz-option" onclick="showPage(4)">Long walks 🌙</div>
-  <div class="quiz-option" onclick="showPage(4)">Netflix binge 🎬</div>
-</div>
+        <div class="btn-wrap" id="btnWrap">
+            <button class="btn yes" id="yesBtn">YES 💖</button>
+            <button class="btn no" id="noBtn">No 😢</button>
+        </div>
+    </section>
 
-<!-- Page 4: Quiz Question 2 -->
-<div id="page4" class="page hidden">
-  <h1>Another one! 🧸</h1>
-  <p>What makes you smile the most?</p>
-  <div class="quiz-option" onclick="showPage(5)">My jokes 😜</div>
-  <div class="quiz-option" onclick="showPage(5)">My hugs 🤗</div>
-  <div class="quiz-option" onclick="showPage(5)">My surprises 🎁</div>
-</div>
+    <!-- QUIZ -->
+    <section class="section" id="quiz" style="display:none;">
+        <h2>Quick question 💌</h2>
+        <p>What do u think about when u miss u the most?</p>
 
-<!-- Page 5: Letter -->
-<div id="page5" class="page hidden">
-  <div id="letter">
-    <h2>My Dearest Armaan,</h2>
-    <p>
-      I miss you every day, and even though we are miles apart, my heart feels you with me.  
-      Your laughter, your kindness, your love – everything about you makes my world brighter.  
-      I treasure every memory we’ve shared and dream of the moments we will create together.  
-      You are my heart, my peace, my everything.  
-      I hope this little surprise reminds you how deeply I care for you. I love you endlessly.
-    </p>
-    <p>Forever yours,<br>Bhoomika 💖</p>
-  </div>
+        <div class="quiz-btns">
+            <button onclick="showAnswer()">My smile 😄</button>
+            <button onclick="showAnswer()">My voice 💞</button>
+            <button onclick="showAnswer()">Our future together 💖</button>
+        </div>
+
+        <p id="quizAnswer" style="display:none; margin-top:20px; font-weight:600;">
+            Correct answer? All of it. Always. 🫶
+        </p>
+    </section>
+
+    <!-- LETTER -->
+    <section class="section" id="letterSection" style="display:none;">
+        <h2>For u 🤍</h2>
+        <div class="letter">
+            Dear Armaan,<br><br>
+            Being far from u isn’t easy, but loving u has never been difficult.<br><br>
+            I miss u in the quiet moments, in random thoughts, and every time I wish I could hear ur voice right then.<br><br>
+            What we have is real, strong, and worth every mile between us. One day, this distance will just be a story.<br><br>
+            Will u be my Valentine — today, tomorrow, and always?<br><br>
+            Always yours,<br>
+            Bhoomika ❤️
+        </div>
+    </section>
+
+    <footer>
+        Made with love by Bhoomika ❤️<br>
+        <small>P.S. I love u more than u know.</small>
+    </footer>
+
 </div>
 
 <script>
-  const pages = {
-    1: document.getElementById('page1'),
-    2: document.getElementById('page2'),
-    3: document.getElementById('page3'),
-    4: document.getElementById('page4'),
-    5: document.getElementById('page5')
-  };
-  
-  function showPage(num) {
-    for (let i = 1; i <= 5; i++) {
-      pages[i].classList.add('hidden');
+    // floating hearts
+    setInterval(() => {
+        const h = document.createElement('div');
+        h.className = 'heart';
+        h.innerText = '💖';
+        h.style.left = Math.random() * 100 + '%';
+        document.getElementById('hearts').appendChild(h);
+        setTimeout(() => h.remove(), 14000);
+    }, 2500);
+
+    const noBtn = document.getElementById('noBtn');
+    const yesBtn = document.getElementById('yesBtn');
+    let count = 0;
+
+    noBtn.addEventListener('mouseenter', () => {
+        count++;
+        noBtn.style.left = Math.random() * 70 + '%';
+        noBtn.style.top = Math.random() * 70 + 'px';
+        yesBtn.style.transform = `scale(${1 + count * .15})`;
+        if (count > 6) noBtn.style.display = 'none';
+    });
+
+    yesBtn.onclick = () => {
+        document.getElementById('btnWrap').style.display = 'none';
+        document.getElementById('quiz').style.display = 'block';
+    };
+
+    function showAnswer() {
+        document.getElementById('quizAnswer').style.display = 'block';
+        document.getElementById('letterSection').style.display = 'block';
     }
-    pages[num].classList.remove('hidden');
-  }
-
-  const noBtn = document.getElementById('no');
-
-  noBtn.addEventListener('mouseenter', () => {
-    const x = Math.random() * (window.innerWidth - 120);
-    const y = Math.random() * (window.innerHeight - 60);
-    noBtn.style.position = 'absolute';
-    noBtn.style.left = x + 'px';
-    noBtn.style.top = y + 'px';
-  });
-
-  noBtn.addEventListener('click', () => {
-    alert('Try again!');
-  });
 </script>
+
 </body>
 </html>
